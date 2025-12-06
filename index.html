@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>সাংস্কৃতিক অনুষ্ঠান ২০২৫ - রেজিস্ট্রেশন ফর্ম</title>
     
-    <!-- Tailwind CSS (দ্রুত লোডিং এর জন্য) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- ফন্ট -->
@@ -16,7 +16,6 @@
             font-family: 'Hind Siliguri', sans-serif;
             background-color: #f8fafc;
         }
-        /* লোডিং এনিমেশন */
         .loader {
             border: 4px solid #f3f3f3;
             border-top: 4px solid #1e40af;
@@ -29,15 +28,13 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        /* আইফ্রেম স্মুথ ট্রানজিশন */
         #form-frame {
-            transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            transition: height 0.3s ease-out, opacity 0.5s ease-in-out;
             opacity: 0;
         }
         #form-frame.loaded {
             opacity: 1;
         }
-        /* নিচে জুম বাটন বা ব্রাউজার কন্ট্রোল যাতে ফুটার না ঢেকে দেয় */
         .safe-bottom-padding {
             padding-bottom: env(safe-area-inset-bottom);
         }
@@ -55,11 +52,10 @@
     <!-- মেইন কন্টেন্ট -->
     <div class="relative z-10 container mx-auto px-4 py-8 md:py-12 flex flex-col items-center safe-bottom-padding">
         
-        <!-- হেডার সেকশন -->
-        <div class="text-center text-white mb-8 md:mb-10 max-w-4xl">
+        <!-- হেডার -->
+        <div class="text-center text-white mb-6 md:mb-10 max-w-4xl">
             <div class="flex justify-center mb-4">
                 <div class="bg-white/10 p-4 rounded-full backdrop-blur-sm border border-white/20 shadow-lg">
-                    <!-- Graduation Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-300 w-10 h-10 md:w-12 md:h-12">
                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
                         <path d="M6 12v5c3 3 9 3 12 0v-5"/>
@@ -73,7 +69,6 @@
             </h1>
             <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-blue-100">
                 <div class="flex items-center gap-2 bg-blue-800/50 px-4 py-1 rounded-full border border-blue-700/50 backdrop-blur-md">
-                    <!-- Music Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400">
                         <path d="M9 18V5l12-2v13"/>
                         <circle cx="6" cy="18" r="3"/>
@@ -86,17 +81,13 @@
 
         <!-- ফর্ম কার্ড -->
         <div class="w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 relative">
-            
-            <!-- উপরের রঙিন বর্ডার -->
             <div class="h-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
 
-            <!-- লোডিং স্ক্রিন -->
             <div id="loader-overlay" class="absolute inset-0 flex flex-col items-center justify-center bg-white z-20 h-[500px]">
                 <div class="loader mb-4"></div>
                 <p class="text-gray-500 font-medium animate-pulse">ফর্ম লোড হচ্ছে...</p>
             </div>
 
-            <!-- Google Form Iframe -->
             <div class="relative w-full bg-white">
                 <iframe 
                     id="form-frame"
@@ -114,15 +105,9 @@
             </div>
         </div>
 
-        <!-- ফুটার সেকশন -->
-        <div class="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full max-w-4xl text-gray-600 mb-8">
-            <!-- ঠিকানা বাটন -->
-            <a 
-                href="https://maps.app.goo.gl/paidzyx6zX39pEnG6" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md hover:border-blue-200 transition group cursor-pointer"
-            >
+        <!-- ফুটার -->
+        <div class="mt-6 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full max-w-4xl text-gray-600 mb-8">
+            <a href="https://maps.app.goo.gl/paidzyx6zX39pEnG6" target="_blank" rel="noopener noreferrer" class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md hover:border-blue-200 transition group cursor-pointer">
                 <div class="bg-blue-50 p-3 rounded-full mb-3 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
@@ -133,7 +118,6 @@
                 <p class="text-sm">ফারইস্ট ইন্টারন্যাশনাল ইউনিভার্সিটি ক্যাম্পাস</p>
             </a>
 
-            <!-- যোগাযোগ কার্ড -->
             <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
                 <div class="bg-blue-50 p-3 rounded-full mb-3 text-blue-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -149,44 +133,37 @@
         <div class="text-center text-gray-400 text-sm pb-8">
             <p>© ২০২৫ ফারইস্ট ইন্টারন্যাশনাল ইউনিভার্সিটি | সর্বস্বত্ব সংরক্ষিত</p>
         </div>
-
     </div>
 
-    <!-- স্মার্ট স্ক্রিপ্ট: এটি ডিভাইসের সাইজ অনুযায়ী উচ্চতা ঠিক করবে -->
+    <!-- স্ক্রিপ্ট: মোবাইলে নির্দিষ্ট ২৮০০ পিক্সেল হাইট -->
     <script>
         const iframe = document.getElementById('form-frame');
         const loader = document.getElementById('loader-overlay');
 
-        // লোড হলে লোডার সরে যাবে
         iframe.onload = function() {
             loader.style.display = 'none';
             iframe.classList.add('loaded');
-            adjustHeight(); // লোড হওয়ার সাথে সাথে হাইট ঠিক করবে
+            calculateHeight();
         };
 
-        // স্ক্রিন সাইজ অনুযায়ী হাইট সেট করার ফাংশন
-        function adjustHeight() {
-            const width = window.innerWidth;
+        function calculateHeight() {
+            const screenWidth = window.innerWidth;
             
-            if (width < 640) { 
-                // মোবাইল ডিভাইস (খুব লম্বা ফর্ম প্রয়োজন)
-                iframe.style.height = '3000px'; // এখানে ৩০০০ পিক্সেল করা হয়েছে
-            } else if (width >= 640 && width < 1024) { 
-                // ট্যাবলেট ডিভাইস
-                iframe.style.height = '2800px';
-            } else { 
-                // ল্যাপটপ বা কম্পিউটার (কম হাইট প্রয়োজন কারণ ফর্ম পাশাপাশি থাকে)
+            if (screenWidth < 640) {
+                // মোবাইল: ফিক্সড ২৮০০ পিক্সেল
+                iframe.style.height = '2800px'; 
+            } else if (screenWidth < 1024) {
+                // ট্যাবলেট
+                iframe.style.height = '2500px';
+            } else {
+                // ডেস্কটপ
                 iframe.style.height = '2100px';
             }
         }
 
-        // স্ক্রিন রিসাইজ করলে আবার হাইট ঠিক করবে
-        window.addEventListener('resize', adjustHeight);
-        
-        // শুরুতেই একবার রান হবে
-        adjustHeight();
+        window.addEventListener('resize', calculateHeight);
+        calculateHeight();
     </script>
 </body>
 </html>
-
 
